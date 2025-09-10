@@ -24,6 +24,12 @@
         dropdown.addEventListener("change", addList);
         function addList(){
             var item = this.value;
+            var items = document.getElementById("shopList").getElementsByTagName("li");
+            for (var i=0; i<items.length; i++){
+                if (items[i].textContent == item){
+                    return;
+                }
+            }
             if (item){
                 var li = document.createElement("li");
                 var node = document.createTextNode(item);
